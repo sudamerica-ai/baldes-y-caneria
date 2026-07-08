@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Los baldes y la cañería — para mi mamá</title>
+  <meta name="description" content="Una explicación para mi madre sobre el dinero, el tiempo y mi forma de ver el mundo, contada con una sola imagen: el agua.">
+  <meta name="theme-color" content="#04101c">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <div class="grain"></div>
+  <canvas id="cursor-canvas"></canvas>
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div id="wipe"></div>
+  <button class="sound-toggle" id="soundToggle" aria-label="Sonido ambiente">♪</button>
+
+  <main id="scroll">
+
+  <!-- ============ 00 · HERO ============ -->
+  <section class="scene hero" data-scene="pond" data-group="intro" data-water="rain">
+    <div class="stage">
+      <img class="bg-image" data-parallax="0.14" src="assets/pond.webp"
+           srcset="assets/pond@1x.webp 720w, assets/pond.webp 1440w" sizes="100vw"
+           alt="Un estanque solitario iluminado por una sola luz dorada">
+      <canvas class="water" data-w></canvas>
+      <canvas class="fx" data-p="motes" data-color="gold"></canvas>
+      <div class="copy center">
+        <p class="eyebrow">Para ti, mamá</p>
+        <h1 class="headline">
+          <span class="reveal"><span>Los baldes</span></span>
+          <span class="reveal"><span>y la <span class="cyan">cañería</span></span></span>
+        </h1>
+        <p class="lede">Hay cosas que no soy capaz de explicarte en palabras. Así que le pedí a una inteligencia artificial que me ayudara a dibujarlas — con agua, y con luz. Con esto quiero que entiendas por qué me siento así.</p>
+      </div>
+      <div class="scroll-hint">Baja conmigo</div>
+    </div>
+  </section>
+
+  <!-- ============ 01 · EL ESTANQUE ============ -->
+  <section class="scene" data-scene="pond" data-group="A" data-fx="fill" data-water="pond">
+    <div class="stage">
+      <img class="bg-image" data-parallax="0.10" src="assets/pond.webp"
+           srcset="assets/pond@1x.webp 720w, assets/pond.webp 1440w" sizes="100vw"
+           alt="El estanque de una vida, a medio llenar">
+      <canvas class="water" data-w></canvas>
+      <div class="copy">
+        <p class="eyebrow">01 — El estanque</p>
+        <h2 class="headline">
+          <span class="reveal"><span>Cada vida es un estanque</span></span>
+          <span class="reveal"><span>que hay que <em>llenar</em>.</span></span>
+        </h2>
+        <p class="body">Imagina que tu vida entera es un estanque: tu calma, tu libertad, todo lo que te sostiene, medido en agua. Nadie elige con cuánta empieza — hay quien nace casi lleno y quien nace casi seco. Yo tuve suerte en una cosa: desde el primer día cayó sobre mí un agua que no tuve que merecer, tu amor. Esa nunca me faltó. Todo lo demás, mamá, hay que salir a juntarlo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 · LOS BALDES ============ -->
+  <section class="scene" data-scene="buckets" data-group="A">
+    <div class="stage">
+      <img class="bg-image" data-parallax="0.13" src="assets/buckets.webp"
+           srcset="assets/buckets@1x.webp 720w, assets/buckets.webp 1440w" sizes="100vw"
+           alt="Una figura cargando dos baldes de agua brillante hacia un estanque lejano">
+      <canvas class="fx" data-p="bubbles"></canvas>
+      <div class="copy">
+        <p class="eyebrow">02 — El sueldo</p>
+        <h2 class="headline">
+          <span class="reveal"><span>Casi todos cargan</span></span>
+          <span class="reveal"><span><em>baldes</em>.</span></span>
+        </h2>
+        <p class="body">Vas a la fuente, llenas un balde y lo cargas. Todo bien… hasta que preguntas: ¿el estanque de quién estás llenando? Cuando trabajas por un sueldo, cada balde que cargas no cae en TU estanque: cae en el del dueño del estanque. A cambio, al final del mes te devuelven algo de agua para el tuyo — un balde, o dos o tres si destacas, siempre un poco más que al resto. Pero es apenas una parte de todo lo que echaste en el estanque de otro. Por eso corres todo el día y el tuyo casi no sube.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 · EL TIEMPO ============ -->
+  <section class="scene" data-scene="time" data-group="A">
+    <div class="stage">
+      <img class="bg-image" data-parallax="0.12" src="assets/time.webp"
+           srcset="assets/time@1x.webp 720w, assets/time.webp 1440w" sizes="100vw"
+           alt="Una columna de agua que se fuga hacia arriba y no vuelve">
+      <canvas class="fx" data-p="motes"></canvas>
+      <div class="copy">
+        <p class="eyebrow">03 — El tiempo</p>
+        <h2 class="headline">
+          <span class="reveal"><span>Cada balde cuesta algo</span></span>
+          <span class="reveal"><span>que <em>no vuelve</em>.</span></span>
+        </h2>
+        <p class="body">Tus horas. El dinero perdido se recupera; una hora, jamás. Cambiar tus horas por ese balde de agua es el trato más caro que existe, porque pagas con la única agua que nunca se vuelve a llenar. Cuando me dicen «trabaja para llenar tu estanque», ustedes escuchan seguridad; yo escucho el precio: mi vida entera, hora tras hora, llenando el estanque de otro. No es que no quiera trabajar, mamá. Es que sé exactamente cuánto cuesta.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 · EL BALDE DORADO ============ -->
+  <section class="scene" data-scene="goldcuff" data-group="A">
+    <div class="stage">
+      <img class="bg-image" data-parallax="0.11" src="assets/goldcuff.webp"
+           srcset="assets/goldcuff@1x.webp 720w, assets/goldcuff.webp 1440w" sizes="100vw"
+           alt="Un balde dorado encadenado a una muñeca">
+      <canvas class="fx" data-p="motes" data-color="gold"></canvas>
+      <div class="copy">
+        <p class="eyebrow">04 — Las esposas de oro</p>
+        <h2 class="headline">
+          <span class="reveal"><span>El balde más peligroso</span></span>
+          <span class="reveal"><span>es el <em>dorado</em>.</span></span>
+        </h2>
+        <p class="body">A veces el agua que te devuelven por cargar es un poco más que al resto: un buen sueldo, cómodo, admirado. Y ahí está la trampa: es tan cómodo que da miedo soltarlo. Sigues llenando el estanque de otro para siempre, no por necesidad, sino por miedo a perder la comodidad. Le dicen estabilidad. Yo le tengo más miedo a pasarme la vida llenando el estanque de otro que a empezar de cero, cavando mi propia cañería.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 · LA CAÑERÍA ============ -->
+  <section class="scene" data-scene="pipe" data-group="B" data-fx="pipe">
+    <div class="stage">
+      <img class="bg-image" data-parallax="0.12" src="assets/pipe.webp"
+           srcset="assets/pipe@1x.webp 720w, assets/pipe.webp 1440w" sizes="100vw"
+           alt="Una cañería que vierte agua sola en un estanque lleno">
+      <canvas class="fx" data-p="drops"></canvas>
+      <div class="copy">
+        <p class="eyebrow">05 — Lo que yo construyo</p>
+        <h2 class="headline">
+          <span class="reveal"><span>Pero existe otra forma.</span></span>
+          <span class="reveal"><span>Y casi nadie la <span class="cyan">nombra</span>.</span></span>
+        </h2>
+        <p class="body">En vez de cargar baldes toda la vida, construir una cañería: algo que lleve agua a tu estanque solo, aunque tú no estés cargando. Cuesta muchísimo y al principio no cae ni una gota; todos te preguntan por qué pierdes el tiempo parado. Pero el día que queda lista, llena tu estanque mientras duermes — y esas horas que ya no gastas cargando las das a lo que de verdad importa. Los demás ven a alguien sin balde; lo que no ven es la cañería que va a llenarlo mucho más rápido.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 · CON EL CEREBRO ============ -->
+  <section class="scene" data-scene="mind" data-group="B" data-water="pool">
+    <div class="stage">
+      <img class="bg-image" data-parallax="0.12" src="assets/mind.webp"
+           srcset="assets/mind@1x.webp 720w, assets/mind.webp 1440w" sizes="100vw"
+           alt="Una cabeza de agua y luz de la que nace una cañería">
+      <canvas class="water" data-w></canvas>
+      <div class="copy">
+        <p class="eyebrow">06 — Cómo se construye</p>
+        <h2 class="headline">
+          <span class="reveal"><span>No se cava con los brazos.</span></span>
+          <span class="reveal"><span>Se cava con la <em>cabeza</em>.</span></span>
+        </h2>
+        <p class="body">Con dos brazos hay un tope: solo cargas lo que aguanta tu cuerpo en 24 horas. El cerebro no tiene ese tope. Hay dos formas de usarlo: contratar a otras personas para que carguen contigo, o —lo que de verdad cambia todo— crear una herramienta que le sirva al estanque de miles de personas, y que ellas te paguen con su agua. Una herramienta no se cansa, no duerme, no tiene solo dos manos. Mientras tú descansas, sigue llevando agua a tu estanque. Eso es una cañería.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 07 · GUARDAR NO BASTA ============ -->
+  <section class="scene" data-scene="compound" data-group="B" data-fx="compound">
+    <div class="stage">
+      <img class="bg-image" data-fx-target data-parallax="0.10" src="assets/compound.webp"
+           srcset="assets/compound@1x.webp 720w, assets/compound.webp 1440w" sizes="100vw"
+           alt="Una esfera de agua que rueda y crece">
+      <canvas class="fx" data-p="motes"></canvas>
+      <div class="copy">
+        <p class="eyebrow">07 — Guardar no basta</p>
+        <h2 class="headline">
+          <span class="reveal"><span>Guardar no llena el estanque.</span></span>
+          <span class="reveal"><span>La <span class="cyan">cañería</span> sí.</span></span>
+        </h2>
+        <p class="body">Me dirás: junta de a poco, guarda un poco más que el resto y algún día llegarás. Ojalá fuera así. El agua guardada se queda quieta: un poco más que los demás no lo llena más rápido, solo lo deja un poquito más lleno. Lo que cambia todo no es guardar — es la cañería. Una vez que corre, el agua llega sola, y cada día llega más. No estoy juntando gotas: estoy cavando el canal por donde después va a correr un río.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 08 · POR QUÉ CASI NADIE LA VE ============ -->
+  <section class="scene" data-scene="crowd" data-group="B">
+    <div class="stage">
+      <img class="bg-image" data-parallax="0.12" src="assets/crowd.webp"
+           srcset="assets/crowd@1x.webp 720w, assets/crowd.webp 1440w" sizes="100vw"
+           alt="Una multitud cargando baldes, feliz, sin mirar el río lejano">
+      <canvas class="fx" data-p="bubbles"></canvas>
+      <div class="copy">
+        <p class="eyebrow">08 — Por qué casi nadie la ve</p>
+        <h2 class="headline">
+          <span class="reveal"><span>Casi todos cargan baldes</span></span>
+          <span class="reveal"><span>toda la vida — y son <em>felices</em>.</span></span>
+        </h2>
+        <p class="body">Y no es que sean tontos, mamá. Es que nadie les mostró nunca que el estanque se podía llenar de otra forma. Si creciste viendo a todos cargar baldes, cargar baldes no es una elección: es lo único que existe. Nadie echa de menos un río que nunca supo que existía. Por eso son felices — y está bien que lo sean. A mí me pasó lo contrario: me tocó ver el río. Y lo que uno ve, ya no lo puede dejar de ver.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 09 · VELAS Y LINTERNAS ============ -->
+  <section class="scene" data-scene="candles" data-group="B">
+    <div class="stage">
+      <img class="bg-image" data-parallax="0.11" src="assets/candles.webp"
+           srcset="assets/candles@1x.webp 720w, assets/candles.webp 1440w" sizes="100vw"
+           alt="Un salón de velas iguales y un solo faro que las supera">
+      <canvas class="fx" data-p="motes" data-color="gold"></canvas>
+      <div class="copy">
+        <p class="eyebrow">09 — La luz</p>
+        <h2 class="headline">
+          <span class="reveal"><span>Creían que un título</span></span>
+          <span class="reveal"><span>me haría <em>destacar</em>.</span></span>
+        </h2>
+        <p class="body">Y en su época era verdad: un título era como una vela encendida en un salón a oscuras — una sola se veía desde lejos. Pero hoy casi todos tienen su vela. Salones enteros de velas iguales. Cuando todos tienen la misma luz, la vela ya no te distingue: te vuelve uno más. Para que te vean de verdad hoy no necesitas otra vela — necesitas ser luz propia, un faro que alumbre aunque los demás se apaguen. El faro y la cañería son la misma cosa: algo tuyo que da luz —o agua— sin que tengas que sostenerlo con las manos toda la vida.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 10 · ME ENSEÑASTE A DESTACAR ============ -->
+  <section class="scene" data-scene="status" data-group="C">
+    <div class="stage">
+      <img class="bg-image" data-parallax="0.11" src="assets/status.webp"
+           srcset="assets/status@1x.webp 720w, assets/status.webp 1440w" sizes="100vw"
+           alt="Una multitud luciendo baldes dorados y una figura sola construyendo una cañería">
+      <canvas class="fx" data-p="motes" data-color="gold"></canvas>
+      <div class="copy">
+        <p class="eyebrow">10 — La comparación</p>
+        <h2 class="headline">
+          <span class="reveal"><span>Me enseñaste a destacar.</span></span>
+          <span class="reveal"><span>Y para eso hay que <em>compararse</em>.</span></span>
+        </h2>
+        <p class="body">Y te lo agradezco, mamá, de verdad. Pero para destacar hay que mirar al lado y medirse con el resto: ser mejor que los que tienes cerca. Ese hábito me sirvió de niño… y de grande se me dio vuelta. Porque dejé de compararme con los de al lado. Sin darme cuenta, empecé a compararme con todo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 11 · REPRESAS Y VASOS ============ -->
+  <section class="scene" data-scene="dam" data-group="C">
+    <div class="stage">
+      <img class="bg-image" data-parallax="0.13" src="assets/dam.webp"
+           srcset="assets/dam@1x.webp 720w, assets/dam.webp 1440w" sizes="100vw"
+           alt="Una represa colosal detrás de gente que llena un estanque con vasos">
+      <canvas class="fx" data-p="motes"></canvas>
+      <div class="copy">
+        <p class="eyebrow">11 — Represas y vasos</p>
+        <h2 class="headline">
+          <span class="reveal"><span>Veo toda el agua del mundo.</span></span>
+          <span class="reveal"><span>Y ya no puedo <em>dejar de verla</em>.</span></span>
+        </h2>
+        <p class="body">Cuando la miro entera, veo algo que me pesa: hay gente con represas —ríos enteros guardados, agua que trabaja sola— mientras nosotros intentamos llenar el estanque a vasos. No lo digo con rencor. Lo digo porque, una vez que lo ves, no lo puedes des-ver. Y llenar un estanque a vasos, sabiendo que existen las represas, se vuelve insoportable.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 12 · UN CEREBRO DISTINTO ============ -->
+  <section class="scene" data-scene="gifted" data-group="C">
+    <div class="stage">
+      <img class="bg-image" data-parallax="0.11" src="assets/gifted.webp"
+           srcset="assets/gifted@1x.webp 720w, assets/gifted.webp 1440w" sizes="100vw"
+           alt="Un niño cuya cabeza brilla más que las de los demás">
+      <canvas class="fx" data-p="motes" data-color="gold"></canvas>
+      <div class="copy">
+        <p class="eyebrow">12 — La alta capacidad</p>
+        <h2 class="headline">
+          <span class="reveal"><span>Nací con un cerebro</span></span>
+          <span class="reveal"><span>que llena más <em>rápido</em>.</span></span>
+        </h2>
+        <p class="body">De niño llenaba más rápido que el resto sin esforzarme; otros cargaban con todas sus fuerzas y no me alcanzaban. Tú lo viste antes que nadie, mamá — antes de que tuviera nombre. Creíste que era un regalo entero. Y lo era… pero era solo la mitad de la historia.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 13 · EL AGUA QUE BRILLA ============ -->
+  <section class="scene" data-scene="arms" data-group="C">
+    <div class="stage">
+      <img class="bg-image" data-parallax="0.10" src="assets/arms.webp"
+           srcset="assets/arms@1x.webp 720w, assets/arms.webp 1440w" sizes="100vw"
+           alt="Una mano levanta agua brillante con facilidad, pero no puede con el agua gris">
+      <canvas class="fx" data-p="drops"></canvas>
+      <div class="copy">
+        <p class="eyebrow">13 — Mi TDA</p>
+        <h2 class="headline">
+          <span class="reveal"><span>Mi cerebro solo se enciende</span></span>
+          <span class="reveal"><span>con el agua que <em>brilla</em>.</span></span>
+        </h2>
+        <p class="body">Lo nuevo, lo difícil, lo que me apasiona — eso lo levanto sin esfuerzo. Pero el agua gris y quieta —lo aburrido, lo repetitivo— no la puedo mover, aunque pese menos que una pluma. No es flojera, mamá, aunque durante años me lo dijeron y yo mismo llegué a creerlo. Tiene nombre: se llama TDA, y no lo elegí.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 14 · CAZADOR ENTRE GRANJEROS ============ -->
+  <section class="scene" data-scene="hunter" data-group="C">
+    <div class="stage">
+      <img class="bg-image" data-parallax="0.12" src="assets/hunter.webp"
+           srcset="assets/hunter@1x.webp 720w, assets/hunter.webp 1440w" sizes="100vw"
+           alt="Un cazador alerta entre granjeros que riegan hileras grises">
+      <canvas class="fx" data-p="motes"></canvas>
+      <div class="copy">
+        <p class="eyebrow">14 — Cazador entre granjeros</p>
+        <h2 class="headline">
+          <span class="reveal"><span>No estoy roto.</span></span>
+          <span class="reveal"><span>Soy un <em>cazador</em> entre granjeros.</span></span>
+        </h2>
+        <p class="body">Mi cabeza está hecha para cazar —el peligro, lo nuevo, la emergencia— no para regar la misma hilera gris cada día. Por eso lo intenso me sale fácil y lo monótono se me hace un muro. Es un regalo enorme y una dificultad real al mismo tiempo. No es contradicción: es mi combinación exacta. Y explica casi todo lo que los demás nunca entendieron de mí.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 15 · EL MISMO CEREBRO ============ -->
+  <section class="scene" data-scene="mind" data-group="C" data-water="pool">
+    <div class="stage">
+      <img class="bg-image" data-parallax="0.12" src="assets/mind.webp"
+           srcset="assets/mind@1x.webp 720w, assets/mind.webp 1440w" sizes="100vw"
+           alt="La misma cabeza de agua y luz que ve las represas">
+      <canvas class="water" data-w></canvas>
+      <div class="copy">
+        <p class="eyebrow">15 — El don y la condena</p>
+        <h2 class="headline">
+          <span class="reveal"><span>El mismo cerebro</span></span>
+          <span class="reveal"><span>que fue mi <em>regalo</em>…</span></span>
+        </h2>
+        <p class="body">Aquí está lo que más me cuesta decirte. El cerebro que de niño me hizo llenar más rápido que todos… es el mismo que me mostró las represas. El regalo y la condena son la misma cosa. Si mi cabeza fuera común, cargaría baldes tranquilo y sería feliz, como casi todos. Pero no puedo: el mismo cerebro que me hizo bueno para el balde es el que me obligó a ver más lejos. Y ver más lejos tiene un precio — ya no te sirve el camino corto.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 16 · EL MURO ============ -->
+  <section class="scene" data-scene="greybuckets" data-group="C">
+    <div class="stage">
+      <img class="bg-image" data-parallax="0.11" src="assets/greybuckets.webp"
+           srcset="assets/greybuckets@1x.webp 720w, assets/greybuckets.webp 1440w" sizes="100vw"
+           alt="Miles de baldes grises que se funden en la forma de una cañería">
+      <canvas class="fx" data-p="motes"></canvas>
+      <div class="copy">
+        <p class="eyebrow">16 — El muro</p>
+        <h2 class="headline">
+          <span class="reveal"><span>La cañería se construye</span></span>
+          <span class="reveal"><span>con miles de <em>baldes grises</em>.</span></span>
+        </h2>
+        <p class="body">Y aquí está el nudo de toda mi historia. No me falta cerebro: lo tengo. No me falta ver la cañería: la veo clarísima. Lo que me separa de ella son los miles de baldes grises que hay que cargar cada día para construirla — justo el agua apagada que mi cabeza no logra levantar. Mi pelea no es contra nadie afuera. Es contra eso: aprender a mover el agua gris el tiempo suficiente para terminar el canal.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 17 · DOLOR (1) ============ -->
+  <section class="scene" data-scene="alone" data-group="C">
+    <div class="stage">
+      <img class="bg-image" data-parallax="0.12" src="assets/alone.webp"
+           srcset="assets/alone@1x.webp 720w, assets/alone.webp 1440w" sizes="100vw"
+           alt="Una figura sola en un risco viendo todo el paisaje de agua">
+      <canvas class="fx" data-p="motes"></canvas>
+      <div class="copy">
+        <p class="eyebrow">17 — Lo que más duele</p>
+        <h2 class="headline">
+          <span class="reveal"><span>Ver todo…</span></span>
+          <span class="reveal"><span>y verlo <em>solo</em>.</span></span>
+        </h2>
+        <p class="body">Ver la cañería, las represas, la puerta abierta — verlo todo con una claridad que quema — y darme cuenta de que la mayoría no ve lo mismo. No porque no puedan: porque nunca les mostraron que había algo más que baldes. Yo no puedo apagar esa vista aunque quiera. Y cargar con ella, solo, cansa más que cualquier balde.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 18 · DOLOR (2) ============ -->
+  <section class="scene" data-scene="digging" data-group="C" data-fx="fill">
+    <div class="stage">
+      <img class="bg-image" data-parallax="0.11" src="assets/digging.webp"
+           srcset="assets/digging@1x.webp 720w, assets/digging.webp 1440w" sizes="100vw"
+           alt="Una figura cavando un canal mientras otros pasan cargando baldes">
+      <canvas class="fx" data-p="drops"></canvas>
+      <div class="copy">
+        <p class="eyebrow">18 — Desde afuera</p>
+        <h2 class="headline">
+          <span class="reveal"><span>Cavo el canal,</span></span>
+          <span class="reveal"><span>y ven a alguien <em>parado</em>.</span></span>
+        </h2>
+        <p class="body">Me pongo a cavar la cañería y desde afuera parece que pierdo el tiempo. Parece que estoy seco, quieto, mientras todos cargan sus baldes con orgullo. Nadie ve el canal por dentro. Me miran cavar en la tierra y me preguntan cuándo voy a conseguir un balde de verdad. Intento explicarlo… y las palabras nunca alcanzan. Por eso terminé haciendo esto — para que al menos tú lo vieras.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 19 · TU PREOCUPACIÓN ============ -->
+  <section class="scene" data-scene="pipe" data-group="C" data-fx="pipe">
+    <div class="stage">
+      <img class="bg-image" data-parallax="0.11" src="assets/pipe.webp"
+           srcset="assets/pipe@1x.webp 720w, assets/pipe.webp 1440w" sizes="100vw"
+           alt="La cañería, y la certeza de que el agua igual llegará">
+      <canvas class="fx" data-p="drops"></canvas>
+      <div class="copy">
+        <p class="eyebrow">19 — Quédate tranquila</p>
+        <h2 class="headline">
+          <span class="reveal"><span>Sé lo que te preocupa.</span></span>
+          <span class="reveal"><span>Y quiero que estés <em>tranquila</em>.</span></span>
+        </h2>
+        <p class="body">Sé que te preocupa que ahora no esté llenando el estanque. Que esté cavando una cañería en un pozo seco y me quede con el estanque vacío. Tienes razón en preocuparte, mamá. Pero eso mismo que me deja ver la represa completa es también lo que me protege: si algún día no me queda otra que llenar el estanque a la fuerza —porque necesito agua para vivir y ustedes ya no están— sería el mejor cargador de baldes que puedas imaginar. Esa capacidad no se me va a ir nunca. Por eso puedo arriesgar. Y aunque pasara la vida entera cavando una cañería que nunca diera agua, dolería mucho menos que cargar baldes como todos, habiendo visto la represa entera. Prefiero fallar intentando el río, que ganar cargando el balde con los ojos cerrados.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 20 · CIERRE ============ -->
+  <section class="scene" data-scene="pond" data-group="C" data-water="rain">
+    <div class="stage">
+      <img class="bg-image" data-parallax="0.10" src="assets/pond.webp"
+           srcset="assets/pond@1x.webp 720w, assets/pond.webp 1440w" sizes="100vw"
+           alt="El estanque bajo la primera luz dorada">
+      <canvas class="water" data-w></canvas>
+      <canvas class="fx" data-p="motes" data-color="gold"></canvas>
+      <div class="copy center">
+        <p class="eyebrow">20 — Y esto es solo la superficie</p>
+        <h2 class="headline">
+          <span class="reveal"><span>Eso es lo que</span></span>
+          <span class="reveal"><span>me <em>duele</em>.</span></span>
+        </h2>
+        <p class="body">No me duele que sea difícil. Me duele estar solo en cómo lo veo, querer que entiendas y no tener las palabras. Y te soy honesto, mamá: esto es apenas lo de arriba. Hay mucho más de fondo, cosas que todavía no sé ni cómo nombrar. Por ahora solo quería que entendieras esto: no elegí el camino difícil por rebelde. Lo elegí porque veo el agua, y ya no puedo dejar de verla.</p>
+        <p class="sign">Gracias por ser la única agua que cayó en mi estanque desde el primer día, sin que tuviera que merecerla.<br>Te ama, tu hijo.</p>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <script src="vendor/lenis.min.js"></script>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

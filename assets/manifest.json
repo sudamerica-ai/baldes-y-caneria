@@ -1,0 +1,79 @@
+{
+  "pond": {
+    "png": "assets/pond.png",
+    "webp": "assets/pond.webp",
+    "mobile": "assets/pond@1x.webp",
+    "w": 1536,
+    "h": 2752
+  },
+  "buckets": {
+    "png": "assets/buckets.png",
+    "webp": "assets/buckets.webp",
+    "mobile": "assets/buckets@1x.webp",
+    "w": 1536,
+    "h": 2752
+  },
+  "time": {
+    "png": "assets/time.png",
+    "webp": "assets/time.webp",
+    "mobile": "assets/time@1x.webp",
+    "w": 1536,
+    "h": 2752
+  },
+  "goldcuff": {
+    "png": "assets/goldcuff.png",
+    "webp": "assets/goldcuff.webp",
+    "mobile": "assets/goldcuff@1x.webp",
+    "w": 1536,
+    "h": 2752
+  },
+  "pipe": {
+    "png": "assets/pipe.png",
+    "webp": "assets/pipe.webp",
+    "mobile": "assets/pipe@1x.webp",
+    "w": 2752,
+    "h": 1536
+  },
+  "compound": {
+    "png": "assets/compound.png",
+    "webp": "assets/compound.webp",
+    "mobile": "assets/compound@1x.webp",
+    "w": 2752,
+    "h": 1536
+  },
+  "cave": {
+    "png": "assets/cave.png",
+    "webp": "assets/cave.webp",
+    "mobile": "assets/cave@1x.webp",
+    "w": 2752,
+    "h": 1536
+  },
+  "status": {
+    "png": "assets/status.png",
+    "webp": "assets/status.webp",
+    "mobile": "assets/status@1x.webp",
+    "w": 2752,
+    "h": 1536
+  },
+  "compare": {
+    "png": "assets/compare.png",
+    "webp": "assets/compare.webp",
+    "mobile": "assets/compare@1x.webp",
+    "w": 2752,
+    "h": 1536
+  },
+  "bigbucket": {
+    "png": "assets/bigbucket.png",
+    "webp": "assets/bigbucket.webp",
+    "mobile": "assets/bigbucket@1x.webp",
+    "w": 2752,
+    "h": 1536
+  },
+  "arms": {
+    "png": "assets/arms.png",
+    "webp": "assets/arms.webp",
+    "mobile": "assets/arms@1x.webp",
+    "w": 2752,
+    "h": 1536
+  }
+}
