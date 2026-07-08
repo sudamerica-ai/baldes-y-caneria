@@ -250,14 +250,54 @@ const Audio = {
   },
 };
 
+/* Real background song (assets/cancion.mp3). Browsers block audible autoplay,
+   so we start it on the first user gesture and fade it in gently. */
+const Song = {
+  el: null, on: false, vol: 0.55, started: false,
+  ensure() { if (!this.el) this.el = document.getElementById("song"); return this.el; },
+  fade(to) {
+    const a = this.ensure(); if (!a) return;
+    const from = a.volume, t0 = performance.now(), dur = 900;
+    const step = (t) => {
+      const k = Math.min(1, (t - t0) / dur);
+      a.volume = from + (to - from) * k;
+      if (k < 1) requestAnimationFrame(step);
+      else if (to === 0) a.pause();
+    };
+    if (to > 0 && a.paused) { a.volume = 0; a.play().catch(() => {}); }
+    requestAnimationFrame(step);
+  },
+  start() {           // called on first gesture — begins playing by itself
+    if (this.started) return;
+    const a = this.ensure(); if (!a) return;
+    this.started = true; this.on = true;
+    this.fade(this.vol);
+  },
+  toggle() { this.on ? this.fade(0) : this.fade(this.vol); this.on = !this.on; return this.on; },
+};
+
 function initSound() {
   const btn = document.getElementById("soundToggle");
-  btn.addEventListener("click", () => {
-    const on = Audio.toggle();
+  const paint = (on) => {
     btn.style.color = on ? "var(--gold-1)" : "var(--cyan-3)";
     btn.textContent = on ? "◊" : "♪";
-    if (on) Audio.drop(300, 0.14);   // confirm tone
+  };
+  btn.addEventListener("click", () => {
+    Song.started = true;           // clicking counts as the gesture
+    const on = Song.toggle();
+    if (!Audio.on && on) Audio.toggle(); else if (Audio.on && !on) Audio.toggle();
+    paint(on);
   });
+  // Autostart on the first real interaction anywhere (scroll, tap, key).
+  const kick = () => {
+    Song.start();
+    if (!Audio.on) Audio.toggle();
+    paint(true);
+    ["pointerdown", "keydown", "wheel", "touchstart"].forEach((e) =>
+      removeEventListener(e, kick, { capture: true }));
+  };
+  ["pointerdown", "keydown", "wheel", "touchstart"].forEach((e) =>
+    addEventListener(e, kick, { capture: true, once: false, passive: true }));
 }
 
 /* fire a soft, act-tuned drop each time a new scene scrolls into view */
